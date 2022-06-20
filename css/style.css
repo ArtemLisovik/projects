@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style-type: none;
+    
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: white;
+
+}
+
+input {outline:none;}
+
+html,
+body {
+    font-family: Raleway;
+    color: #fff;
+    background: black;
+}
+
+[class*="__container"] {
+    max-width: 1020px;
+    margin: 0 auto; 
+}
+
+.wrapper { 
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main {
+    flex: 1 1 auto;
+    z-index: 10;
+    margin-bottom: 50vh;
+    background: black;
+}
+/* ---------------------Header------------------------- */
+.header {
+    margin: 45px 0;
+    position: absolute;
+    z-index: 15;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+.header__container {
+    display: flex;
+    justify-content: center;
+    gap: 20vw;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin: 0 15px;
+    font-size: 16px;
+    color: #fff;
+
+}.link {
+    background-image: linear-gradient(#d63447, #d63447);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: all 0.2s ease;
+    padding-bottom: 9px;
+}
+
+.link:hover {
+    background-size: 100% 2px;
+}
+
+
+/* ---------------------Main------------------------- */
+
+.info__container{
+    background: url("../img/cover_bg_2.jpg") 50% 48%/cover no-repeat fixed;
+    background-position: cover;
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 40vh;
+}
+
+h1 {
+    position: relative;
+    width: 31rem;
+    height: 4.5rem;
+    font-size: 3.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.info__sub-wrapper {
+    text-align: center;
+}
+
+h2 {
+    position: relative;
+    width: 43rem;
+    height: 2.8rem;
+    margin: 32px 0 0 0;
+    font-weight: 400;
+    font-size: 2.2rem;
+
+}
+
+@keyframes menu {
+    0%{
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.header__menu-list1 {
+    animation: menu 1.2s ease-out;
+}
+
+.header__menu-list2 {
+    animation: menu 1.2s ease-out;
+    
+}
+
+.info__scroll-link {
+    display: block;
+    position: absolute;
+    top: 87vh;
+    height: 65px;
+    width: 50px;
+}
+
+@keyframes mouse {
+    0% {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    50%{
+        /* display: block; */
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.info__mouse {
+    display: block;
+    width: 22px;
+    height: 42px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    margin: 0 auto;
+    animation: mouse 2s ease-out;
+}
+
+.info__mouse-scroll {
+    margin: 6px auto;
+    opacity: 0;
+    display: block;
+    height: 3px;
+    width: 3px;
+    border-radius: 4px;
+    border: 2px solid #d63447;
+    animation: mouse-scroll 1.6s ease-out infinite;
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px); }
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px); } 
+    }
+
+
+.info__mouse-text {
+    display: block;
+    margin-top: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    animation: textJump 5s ease-out infinite;
+}
+
+@keyframes textJump {
+    0%{
+        transform: translateY(0px);
+    }
+    15%{
+        transform: translateY(-5px);
+    }
+    30%{
+        transform: translateY(0px);
+    }
+    45%{
+        transform: translateY(-3px);
+    }
+    55%{
+        transform: translateY(0px);
+    }
+    70%{
+        transform: translateY(-2px);
+    }
+    80%{
+        transform: translateY(0px);
+    }
+    90%{
+        transform: translateY(1.5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.info__title-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    animation: title__anim-text 2.5s ease;
+}
+
+.info__title-wrapper {
+    position: absolute;
+    display: block;
+    background-color: #d63447;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: title__anim-redline 1.6s cubic-bezier(.85,0,.15,1) 0.5s;
+}
+
+@keyframes title__anim-redline {
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 100%;
+       left: 0;
+    }
+    100%{
+        width: 0%;
+        left: 100%;
+    }
+}
+
+@keyframes title__anim-text{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    51%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+.info__subtitle-text {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: title__anim-text 2.5s ease;
+
+}
+
+.info__subtitle-wrapper {
+    position: absolute;
+    background-color: #d63447;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    animation: title__anim-redline 1.6s cubic-bezier(.85,0,.15,1) 0.5s;
+
+}
+        /* }---------------------Footer----------------------- */
+
+footer {
+    background-color: #191919;
+    margin: 0 auto;
+    width: 100%;
+    height: 50vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.footer__title {
+    margin: 4rem 0 2.3rem 0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__social li {
+    margin-right: 3vw;
+}
+
+.footer__social li:last-child{
+    margin-right: 0;
+}
+
