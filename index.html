@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/null.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Artem Lisovik</title>
 </head>
@@ -47,20 +48,106 @@
             </section>
             <section class="portfolio">
                 <div class="portfolio__container">
-                    <h3 class="portfolio__title title">Portfolio</h3>
+                    <div class="about-me__title-wrapper title-wrapper">
+                        <h3 class="about-me__title title">Portfolio
+                            <span class="title__wrapper-anim"></span>
+                        </h3>
+                    </div>
                     <div class="portfolio__examples">
-                        <a href="" class="portfolio__link"><img src="img/1.jpg" alt="example"
-                                class="protfolio__item"></a>
-                        <a href="" class="portfolio__link"><img src="img/2.jpg" alt="example"
-                                class="protfolio__item"></a>
-                        <a href="" class="portfolio__link"><img src="img/1.jpg" alt="example"
-                                class="protfolio__item"></a>
-                        <a href="" class="portfolio__link"><img src="img/2.jpg" alt="example"
-                                class="protfolio__item"></a>
-                        <a href="" class="portfolio__link"><img src="img/1.jpg" alt="example"
-                                class="protfolio__item"></a>
-                        <a href="" class="portfolio__link"><img src="img/2.jpg" alt="example"
-                                class="protfolio__item"></a>
+                        <div class="portfolio__item"><a href="" class="portfolio__link"><img src="img/1.jpg"
+                                    alt="example" class="protfolio__item"></a>
+                            <span class="portfolio__animation-wrapper"></span>
+                        </div>
+
+                        <div class="portfolio__item">
+                            <a href="" class="portfolio__link"><img src="img/4.jpg" alt="example"
+                                    class="protfolio__item"></a>
+                            <span class="portfolio__animation-wrapper"></span>
+                        </div>
+
+                        <div class="portfolio__item" id="item__1"><a href="" class="portfolio__link"><img
+                                    src="img/2.jpg" alt="example" class="protfolio__item"></a>
+                            <span class="portfolio__animation-wrapper"></span>
+                        </div>
+                        <div class="portfolio__item"><a href="" class="portfolio__link"><img src="img/4.jpg"
+                                    alt="example" class="protfolio__item"></a>
+                            <span class="portfolio__animation-wrapper"></span>
+                        </div>
+                        <div class="portfolio__item"><a href="" class="portfolio__link"><img src="img/2.jpg"
+                                    alt="example" class="protfolio__item"></a>
+                            <span class="portfolio__animation-wrapper"></span>
+                        </div>
+                        <div class="portfolio__item"><a href="" class="portfolio__link"><img src="img/4.jpg"
+                                    alt="example" class="protfolio__item"></a>
+                            <span class="portfolio__animation-wrapper"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="about-me">
+                <div class="about-me__container">
+                    <div class="about-me__title-wrapper title-wrapper">
+                        <h3 class="about-me__title title">About Me
+                            <span class="title__wrapper-anim"></span>
+                        </h3>
+                    </div>
+                    <div class="about-me__wrapper">
+                        <div class="about-me__photo">
+                            <div class="photo__wrapper">
+                                <img src="img/cover_bg_2.jpg" alt="photo">
+                            </div>
+                        </div>
+                        <div class="about-me__descr descr">
+                            <h4 class="descr__title">We can make it together</h4>
+                            <div class="descr__text">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts</p>
+                                <p>A small river named Duden flows by their place and supplies it with the necessary
+                                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                                    into your mouth.</p>
+                                <a href="" class="descr__button">download my cv</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact-form">
+                <div class="contact-form__container">
+                    <div class="about-me__title-wrapper title-wrapper">
+                        <h3 class="about-me__title title">Get In Touch
+                            <span class="title__wrapper-anim"></span>
+                        </h3>
+                    </div>
+                    <div class="contact-form__inner">
+                        <div class="contact-form__form">
+                            <form action="#" method="post" enctype="multipart/form-data" class="form">
+                                <div class="form__wrapper">
+                                    <div class="form__wrapper-name"><input placeholder="NAME" type="text" name="name">
+                                    </div>
+                                    <div class="form__wrapper-email"> <input placeholder="email" type="text"
+                                            name="email"></div>
+                                </div>
+                                <div class="form__message">
+                                    <textarea placeholder="Write your message" name="message"></textarea>
+                                </div>
+                                <button type="submit">send message</button>
+                            </form>
+                        </div>
+                        <div class="contact-form__info info">
+
+                            <div class="contacts__block email">
+                                <p class="contacts__title">email</p>
+                                <p class="contacts__item">Artemlisovik@icloud.com</p>
+                            </div>
+                            <div class="contacts__block phone">
+                                <p class="contacts__title">phone</p>
+                                <p class="contacts__item">+380 73 17 333 57</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -70,12 +157,15 @@
 
         <footer class="footer">
             <div class="footer__container">
-                <h3 class="footer__title title">Artem Lisovik</h3>
+                <h3 class="about-me__title title">Socials
+                    <span class="title__wrapper-anim"></span>
+                </h3>
                 <ul class="footer__social social">
                     <li class="social__item"><a href="" class="social__link link">Instagram</a></li>
                     <li class="social__item"><a href="" class="social__link link">Telegram</a></li>
                     <li class="social__item"><a href="" class="social__link link">Facebook</a></li>
                 </ul>
+                <p class="footer__copyright">Copyright © 2022 All rights reserved</p>
             </div>
         </footer>
     </wrapper>

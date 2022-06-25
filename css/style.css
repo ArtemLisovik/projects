@@ -1,22 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    list-style-type: none;
-    
-}
-
-a {
-    text-decoration: none;
-    outline: none;
-    color: white;
-
-}
-
-input {outline:none;}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800;900&display=swap');
 
 html,
 body {
@@ -26,23 +8,33 @@ body {
 }
 
 [class*="__container"] {
-    max-width: 1020px;
+    max-width: 1140px;
     margin: 0 auto; 
+    padding: 0 15px;
+}
+
+[class*="__title-wrapper"] {
+    text-align: center;
 }
 
 .wrapper { 
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    overflow: hidden;
 }
 
 .main {
     flex: 1 1 auto;
     z-index: 10;
-    margin-bottom: 50vh;
+    margin-bottom: 350px;
     background: black;
 }
-/* ---------------------Header------------------------- */
+
+section {
+    padding-bottom: 112px;
+}
+/* --------------------------------------------------------Header-------------------------------------------------------------- */
 .header {
     margin: 45px 0;
     position: absolute;
@@ -81,12 +73,12 @@ body {
 }
 
 
-/* ---------------------Main------------------------- */
+/* --------------------------------------------------------Main-------------------------------------------------------------- */
 
 .info__container{
     background: url("../img/cover_bg_2.jpg") 50% 48%/cover no-repeat fixed;
     background-position: cover;
-    height: 100vh;
+    height: 105vh;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -99,7 +91,7 @@ h1 {
     position: relative;
     width: 31rem;
     height: 4.5rem;
-    font-size: 3.8rem;
+    font-size: 4rem;
     letter-spacing: 2px;
     font-weight: 700;
 }
@@ -110,21 +102,21 @@ h1 {
 
 h2 {
     position: relative;
-    width: 43rem;
+    width: 45rem;
     height: 2.8rem;
     margin: 32px 0 0 0;
     font-weight: 400;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
 
 }
 
 @keyframes menu {
     0%{
-        transform: scale(1.2);
+        transform: translateY(90%);
         opacity: 0;
     }
     100%{
-        transform: scale(1);
+        transform: translateY(0%);
         opacity: 1;
     }
 }
@@ -308,24 +300,321 @@ h2 {
     animation: title__anim-redline 1.6s cubic-bezier(.85,0,.15,1) 0.5s;
 
 }
-        /* }---------------------Footer----------------------- */
+
+/* SECTION-portfolio------------------------------ */ 
+
+.title {
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 105px 0;
+    /* animation: title-opacity 1s ease; */
+    display: inline-block;
+}
+
+@keyframes title-opacity {
+    0%{
+        opacity: 0;
+    }
+    99%{ opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.title__wrapper-anim {
+    position: absolute;
+    background-color: black;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: title__anim 1.5s cubic-bezier(.75,.01,.5,1.01);
+}
+
+@keyframes title__anim {
+    0%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        left: 100%;
+        width: 0%;
+    }
+}
+
+.portfolio__examples {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 65px;
+    margin: 0 -15px;
+
+}
+
+
+.portfolio__item{
+    grid-row: span 4;
+    margin: 0 15px 30px 15px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.portfolio__item a img{
+    animation: photo__opacity 3.2s ease;
+}
+
+@keyframes photo__opacity {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.portfolio__animation-wrapper {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 15px;
+    background-color: #d63447;
+    animation: portfolio__anim 2s cubic-bezier(.85,0,.15,1) 0.5s;
+}
+
+@keyframes portfolio__anim {
+    0%{
+
+        width: 0%;
+        left: 0%;
+    }
+    50%{
+        width: 100%;
+        left: 0%;
+
+    }
+    100%{
+        left: 100%;
+        width: 100%
+    }
+}
+
+.portfolio__item:nth-child(2n+2){
+    grid-row: span 7;
+}
+
+.portfolio__item:nth-child(2n+5){
+    grid-row: span 5;
+}
+
+
+
+
+
+
+.portfolio__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SECTION-about------------------------------ */ 
+
+.about-me__wrapper {
+    display: grid;
+    grid-template: 1fr / 2fr 1fr;
+    width: 100%;
+}
+
+.descr__title{
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 30px;
+
+}
+
+.descr {
+    padding: 0 48px 0 15px;
+    animation: text__reveal 1.5s ease;
+
+}
+
+@keyframes text__reveal {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+     }
+}
+
+.descr__text p {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+
+}
+
+.about-me__photo {
+
+}
+
+.photo__wrapper {
+    height: 635px;
+    width: 646px;
+    position: relative;
+}
+
+.about-me__photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.descr__button {
+    margin-top: 10px;
+    display: inline-block;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 17px;
+    transition: all 0.5s ease;
+}
+
+.descr__button:hover {
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+/* SECTION-contact------------------------------ */ 
+.contact-form input {
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid #fff;
+    line-height: 30px;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.contact-form textarea {
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid #fff;
+    line-height: 30px;
+    width: 100%;
+    opacity: 0.5;
+    height: 100%;
+}
+
+.contact-form__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    line-height: 30px;
+}
+
+.form__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+    margin: 0 -15px 30px -15px;
+
+}
+
+.form__message {
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+.contact-form__form {
+    width: 100%;
+}
+
+.contact-form__info{
+    margin-left: 37%;
+}
+
+.contacts__title {
+    font-size: 11px;
+    letter-spacing: .1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 30px;
+}
+
+.contacts__item {
+    font-size: 20px;
+    color: #fff;
+}
+
+.contacts__block{
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.form__wrapper div {
+    margin: 0 15px;
+}
+
+input:focus {
+    opacity: 1;
+}
+
+textarea:focus {
+    opacity: 1;
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.6;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+/* --------------------------------------------------------Footer-------------------------------------------------------------- */
 
 footer {
     background-color: #191919;
     margin: 0 auto;
     width: 100%;
-    height: 50vh;
+    height: 350px;
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 5;
+    text-align: center;
+    padding-top: 60px;
 }
 
-.footer__title {
-    margin: 4rem 0 2.3rem 0;
-    font-size: 30px;
-    font-weight: 900;
-    text-align: center;
+.footer .title__wrapper-anim {
+    background-color: #191919;
 }
 
 .footer__social {
@@ -335,7 +624,10 @@ footer {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
+}
 
+.about-me__title{
+    margin-bottom: 40px;
 }
 
 footer a {
@@ -350,3 +642,10 @@ footer a {
     margin-right: 0;
 }
 
+.footer__copyright {
+    margin-top: 70px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
