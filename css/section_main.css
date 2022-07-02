@@ -1,0 +1,226 @@
+
+.info__container{
+    background: url("../img/cover_bg_2.jpg") 50% 48%/cover no-repeat fixed;
+    background-position: cover;
+    height: 105vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 40vh;
+}
+
+h1 {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+}
+
+.info__sub-wrapper {
+    text-align: center;
+}
+
+h2 {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-top: calc(5px + 15 * (100vw / 1440));
+    font-weight: 400;
+    padding: 10px 40px;
+
+}
+
+@keyframes menu {
+    0%{
+        transform: translateY(90%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.header__menu-list1 {
+    animation: menu 1.2s ease-out;
+}
+
+.header__menu-list2 {
+    animation: menu 1.2s ease-out;
+    
+}
+
+.info__scroll-link {
+    display: block;
+    position: absolute;
+    bottom: 7vh;
+    height: 65px;
+    width: 50px;
+}
+
+@keyframes mouse {
+    0% {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    50%{
+        /* display: block; */
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.info__mouse {
+    display: block;
+    width: 22px;
+    height: 42px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    margin: 0 auto;
+    animation: mouse 2s ease-out;
+}
+
+.info__mouse-scroll {
+    margin: 6px auto;
+    opacity: 0;
+    display: block;
+    height: 3px;
+    width: 3px;
+    border-radius: 4px;
+    border: 2px solid #d63447;
+    animation: mouse-scroll 1.6s ease-out infinite;
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px); }
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px); } 
+    }
+
+
+.info__mouse-text {
+    display: block;
+    margin-top: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    animation: textJump 5s ease-out infinite;
+}
+
+@keyframes textJump {
+    0%{
+        transform: translateY(0px);
+    }
+    15%{
+        transform: translateY(-5px);
+    }
+    30%{
+        transform: translateY(0px);
+    }
+    45%{
+        transform: translateY(-3px);
+    }
+    55%{
+        transform: translateY(0px);
+    }
+    70%{
+        transform: translateY(-2px);
+    }
+    80%{
+        transform: translateY(0px);
+    }
+    90%{
+        transform: translateY(1.5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.info__title-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(25px + 35 * (100vw / 1440));
+    letter-spacing: 2px;
+    font-weight: 700;
+    animation: title__anim-text 2.5s ease;
+}
+
+.info__title-wrapper {
+    position: absolute;
+    display: block;
+    background-color: #d63447;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: title__anim-redline 1.6s cubic-bezier(.85,0,.15,1) 0.5s;
+}
+
+@keyframes title__anim-redline {
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 100%;
+       left: 0;
+    }
+    100%{
+        width: 0%;
+        left: 100%;
+    }
+}
+
+@keyframes title__anim-text{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    51%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+.info__subtitle-text {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    font-size: calc(15px + 16 * (100vw / 1440));
+    align-items: center;
+    text-align: center;
+    animation: title__anim-text 2.5s ease;
+
+}
+
+.info__subtitle-wrapper {
+    position: absolute;
+    background-color: #d63447;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    animation: title__anim-redline 1.6s cubic-bezier(.85,0,.15,1) 0.5s;
+
+}
