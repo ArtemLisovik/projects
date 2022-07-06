@@ -15,6 +15,7 @@
     width: 100%;
     opacity: 0.5;
     height: 100%;
+    resize: none;
 }
 
 .contact-form__inner {
@@ -35,6 +36,10 @@
     margin-left: 37%;
 }
 
+.contact-form div {
+    position: relative;
+}
+
 @media (max-width: 700px) {
     .contact-form__inner {
         grid-template-columns: 1fr;
@@ -51,11 +56,13 @@
     .contact-form__info{
         margin-left: 0%;
     }
+
 }
 
 .form__message {
     height: 200px;
     margin-bottom: 50px;
+    position: relative;
 }
 
 .contact-form__form {
@@ -92,3 +99,8 @@ input:focus {
 textarea:focus {
     opacity: 1;
 }
+
+.form__wrapper div{
+    position: relative;
+}
+

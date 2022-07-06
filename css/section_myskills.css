@@ -27,9 +27,10 @@
     font-weight: 700;
 }
 
-.counter__item{
+.counter__item {
     text-align: center;
     margin: 0 15px 30px 15px;
+    opacity: 0;
 }
 
 .counter__level::after {
@@ -42,5 +43,23 @@
     left: 5px;
     font-weight: 700;
 
+}
+
+._reveal_counter{
+    animation: reveal_counter 0.8s ease;
+    animation-fill-mode: forwards;
+}
+
+._reveal_counter_1 {
+    animation: reveal_counter 0.8s ease 0.2s;
+    animation-fill-mode: forwards;
+}
+._reveal_counter_2 {
+    animation: reveal_counter 0.8s ease 0.3s;
+    animation-fill-mode: forwards;
+}
+._reveal_counter_3 {
+    animation: reveal_counter 0.8s ease 0.4s;
+    animation-fill-mode: forwards;
 }
 

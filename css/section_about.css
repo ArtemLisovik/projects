@@ -4,7 +4,7 @@
     grid-template: 1fr / 1.34fr 1fr;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 15px;
+    padding-bottom: 40px;
 }
 
 .descr__title{
@@ -20,26 +20,24 @@
 }
 
 .descr__text p {
-    margin-bottom: 24px;
+    display: block;
+    margin-bottom: 27px;
     font-size: 18px;
     line-height: 30px;
     font-weight: 300;
-
+    position: relative;
 }
 
 .photo__wrapper {
-    margin: 0 0 1rem;
-    padding: 0 0 100% 0;
-    /* width: 100%; */
     position: relative;
 }
 
 .dotted_img {
     position: absolute;
-    bottom: -4.5%;
-    right: -4.5%;
-    max-width: 30%;
-    max-height: 30%;
+    bottom: -8%;
+    right: -8%;
+    max-width: 45%;
+    max-height: 45%;
     z-index: -2;
 
 }
@@ -51,11 +49,24 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+}
+
+.img__animation-wrapper._anim + div .portfolio__photo{
+    animation: photo__opacity 2.3s ease-out 1s;
+    animation-fill-mode: forwards;
+}
+
+.photo__inner {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 100% 0;
 }
 
 .descr__button {
-    margin-top: 10px;
-    display: inline-block;
+    display: block;
+    width: 188px;
+    height: 50px;
     background-color: black;
     color: #fff;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -65,11 +76,12 @@
     padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
-    letter-spacing: 0.12rem;
+    position: relative;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 15px;
     transition: all 0.5s ease;
+    letter-spacing: 1.5px;
 }
 
 .descr__button:hover {
@@ -85,5 +97,9 @@
         margin-top: 50px;
     }
 
+}
+
+.button {
+    position: relative;
 }
 

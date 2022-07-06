@@ -1,0 +1,51 @@
+@keyframes photo__opacity {
+    0%{
+        transform: scale(1.6);
+    }
+    30%{transform: scale(1.6);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@keyframes photo_reveal {
+    0%{
+
+        width: 0%;
+        left: 0%;
+    }
+    50%{
+        width: 100%;
+        left: 0%;
+
+    }
+    100%{
+        left: 100%;
+        width: 0;
+    }
+}
+
+@keyframes objects_reveal {
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+
+    }
+}
+
+@keyframes reveal_counter {
+    0%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

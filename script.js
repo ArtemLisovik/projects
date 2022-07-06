@@ -15,43 +15,70 @@ document.addEventListener('DOMContentLoaded', () => {
     mainBody.classList.toggle('_lock')
   });
   // --------------------------------------------------
-  const elements = [...document.querySelectorAll('.title')];
+  const elements = [...document.querySelectorAll('.object__wrapper-anim')];
   const titles = elements.slice(0, elements.length - 1);
   const footer = elements.slice(elements.length - 1);
 
-  titles.forEach(item => elementScrollAnimation(item, '_text-anim'));
+  titles.forEach(item => elementScrollAnimation(item, '_active'));
 
-  // window.addEventListener('scroll', (e) => {
-
-  //   titles.forEach(title => {
-
-  //     const titlePosition = title.getBoundingClientRect().bottom;
-  //     if (titlePosition <= document.documentElement.clientHeight) {
-  //       title.classList.add('_text-anim')
-  //     }
-  //   })
-
-  //   if (document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 50) {
-  //     footer[0].classList.add('_text-anim')
-  //   }
-  // })
 
   // ---------------------------------------------------Portfolio_photo_animation
 
-  const portfolioItems = document.querySelectorAll('.portfolio__element');
+  const portfolioItems = document.querySelectorAll('.img__animation-wrapper');
 
   portfolioItems.forEach(item => {
-    elementScrollAnimation(item, '_img_anim');
+    elementScrollAnimation(item, '_anim');
   })
 
-  function elementScrollAnimation (element, cssClassModification) {
-    const elementPosition = element.getBoundingClientRect().bottom - element.getBoundingClientRect().height / 2;
+
+  // ---------------------------------------------------------------------My_skills_counter_anim
+
+  const time = 1500;
+  const step = 1;
+
+  let counters = document.querySelectorAll('.counter__level'),
+    countersParrent = document.querySelectorAll('.counter__item');
+
+  for (let i = 0; i < countersParrent.length; i++) {
+    elementScrollAnimation(countersParrent[i], `_reveal_counter`);
+  }
+
+  const counterReavel = document.addEventListener('scroll', () => {
+    counters.forEach(counter => {
+      countersParrent.forEach(parrent => {
+        outNum(counter, '_reveal_counter', parrent);
+
+      })
+    })
+  })
+
+
+
+  function outNum(elem, activeClass, parrent) {
+    if (parrent.classList.contains(activeClass)) {
+      let n = 0;
+      let t = Math.round(time / (elem.id / step));
+      let interval = setInterval(() => {
+        n = n + step;
+        if (n == elem.id) {
+          clearInterval(interval)
+        }
+        elem.innerHTML = n;
+      }, t)
+      counterReavel.removeEventListener('scroll' , )
+    }
+  }
+
+  function elementScrollAnimation(element, cssClassModification) {
+    const elementPosition = element.getBoundingClientRect().top + element.getBoundingClientRect().height / 1.5;
     document.addEventListener('scroll', () => {
       if (document.documentElement.scrollTop < elementPosition) {
-        if(document.documentElement.scrollTop + document.documentElement.clientHeight >= elementPosition) {
+        if (document.documentElement.scrollTop + document.documentElement.clientHeight >= elementPosition) {
           element.classList.add(cssClassModification);
         }
       }
     })
   }
+
+
 })
