@@ -43,19 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
     elementScrollAnimation(countersParrent[i], `_reveal_counter`);
   }
 
-  const counterReavel = document.addEventListener('scroll', () => {
-    counters.forEach(counter => {
-      countersParrent.forEach(parrent => {
-        outNum(counter, '_reveal_counter', parrent);
-
-      })
-    })
+  countersParrent.forEach(parrent => {
+    const letir = setInterval(() => {
+      if (parrent.classList.contains('_reveal_counter')) {
+        counters.forEach(counter => {
+          outNum(counter);
+          clearInterval(letir);
+        })
+      }
+    }, 10);
   })
 
+ 
 
 
-  function outNum(elem, activeClass, parrent) {
-    if (parrent.classList.contains(activeClass)) {
+
+  function outNum(elem) {
       let n = 0;
       let t = Math.round(time / (elem.id / step));
       let interval = setInterval(() => {
@@ -65,20 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         elem.innerHTML = n;
       }, t)
-      counterReavel.removeEventListener('scroll' , )
-    }
   }
 
-  function elementScrollAnimation(element, cssClassModification) {
-    const elementPosition = element.getBoundingClientRect().top + element.getBoundingClientRect().height / 1.5;
-    document.addEventListener('scroll', () => {
-      if (document.documentElement.scrollTop < elementPosition) {
-        if (document.documentElement.scrollTop + document.documentElement.clientHeight >= elementPosition) {
-          element.classList.add(cssClassModification);
-        }
+  function elementScrollAnimation (element, cssClassModification) {
+    document.addEventListener('scroll', (event) => {
+      event.preventDefault();
+      const distance = element.getBoundingClientRect();
+      if (distance.top + (window.innerHeight / 8) < window.innerHeight && distance.bottom - (window.innerHeight / 8) > 0){
+        element.classList.add(cssClassModification);
       }
     })
   }
-
 
 })

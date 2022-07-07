@@ -1,10 +1,9 @@
 
 .info__container{
-    background: url("../img/cover_bg_2.jpg") 50% 48%/cover no-repeat fixed;
+    background: url("../img/cover_bg_2.jpg") 60%/80% no-repeat fixed;
     background-position: cover;
     height: 105vh;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     position: relative;
